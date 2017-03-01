@@ -36,13 +36,12 @@ exports.readDirFiles = function(directoryPath){
 	var fileArray = [];
 	
 	var dirContent = exports.readDir(directoryPath).then(function(files){
-		 files.forEach(function(fileName){
-			 fileArray.push(exports.readFile(exports.resolvedPath(directoryPath,fileName)));
+		
+		for (int i; i < files.length; i++)
+		{
+			 fileArray.push(exports.readFile(exports.resolvedPath(directoryPath,files[i])));
 		}
 		 return Promise.all(fileArray);
-		);
-	 });
-	 
+	});
 	 return dirContent;
-	 
-}  
+} 
