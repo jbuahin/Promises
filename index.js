@@ -20,16 +20,16 @@ return new Promise(function(resolve,reject)
   });
 }
 
-// exports.readDir = function(directoryPath){
-  // return new Promise(function(resolve,reject){
-    // fs.readdir(directoryPath, (err, files) => {
-      // if (err){
-        // reject(err);
-      // }
-      // resolve(files);
-    // });
-  // });
-// }
+ exports.readDir = function(directoryPath){
+   return new Promise(function(resolve,reject){
+     fs.readdir(directoryPath, (err, files) => {
+       if (err){
+         reject(err);
+       }
+       resolve(files);
+    });
+   });
+}
 
 // exports.readDirFiles = function(directoryPath){
     
