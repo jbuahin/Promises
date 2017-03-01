@@ -37,7 +37,7 @@ exports.readDirFiles = function(directoryPath){
 	
 	var dirContent = exports.readDir(directoryPath).then(function(files){
 		
-		for (int i = 0; i < files.length; i++)
+		for (var i = 0; i < files.length; i++)
 		{
 			 fileArray.push(exports.readFile(exports.resolvedPath(directoryPath,files[i])));
 		}
