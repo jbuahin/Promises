@@ -7,7 +7,8 @@ return path.resolve(directoryPath,fileName);
 };
 
 
-exports.readFile  = function(filePath){
+exports.readFile  = function(filePath)
+{
 return new Promise(function(resolve,reject){
     fs.readFile(filePath, 'utf8', (err, data) => {
       if (err){
@@ -16,7 +17,7 @@ return new Promise(function(resolve,reject){
       resolve(data);
     });
   });
-});
+}
 
 exports.readDir = function(directoryPath){
   return new Promise(function(resolve,reject){
@@ -27,7 +28,7 @@ exports.readDir = function(directoryPath){
       resolve(files);
     });
   });
-};
+}
 
 exports.readDirFiles = function(directoryPath){
     var fileArray = []
