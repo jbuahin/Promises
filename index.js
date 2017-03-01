@@ -4,12 +4,13 @@ const path = require("path");
 
 exports.resolvedPath  = function(directoryPath, fileName){
 return path.resolve(directoryPath,fileName);
-};
+}
 
 
 exports.readFile  = function(filePath)
 {
-return new Promise(function(resolve,reject){
+return new Promise(function(resolve,reject)
+{
     fs.readFile(filePath, 'utf8', (err, data) => {
       if (err){
         reject(err);
@@ -31,13 +32,12 @@ exports.readDir = function(directoryPath){
 }
 
 exports.readDirFiles = function(directoryPath){
-    var fileArray = []
+    var fileArray = [];
 
-    return exports.readDir(directoryPath).then( function(files) {
+    return exports.readDir(directoryPath).then(function(files) {
 			files.forEach(function(fileName) {
-			fileArray.push(exports.readFile(exports.resolvedPath(directoryPath, fileName));
+			fileArray.push(exports.readFile(exports.resolvedPath(directoryPath, fileName)));
 		})
             return Promise.all(fileArray);
         });
-    
 }  
