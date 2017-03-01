@@ -31,15 +31,18 @@ return new Promise(function(resolve,reject)
    });
 }
 
-// exports.readDirFiles = function(directoryPath){
+exports.readDirFiles = function(directoryPath){
     
-	// var fileArray = [];
+	var fileArray = [];
 	
-	// return exports.readDir(directoryPath).then(function(files){
-		// files.forEach(function(fileName){
-			// fileArray.push(exports.readFile(exports.resolvedPath(directoryPath,fileName)));
-		// }
-		// return Promise.all(fileArray);
-		// );
-	// });
-// }  
+	var dirContent = exports.readDir(directoryPath).then(function(files){
+		 files.forEach(function(fileName){
+			 fileArray.push(exports.readFile(exports.resolvedPath(directoryPath,fileName)));
+		}
+		 return Promise.all(fileArray);
+		);
+	 });
+	 
+	 return dirContent;
+	 
+}  
