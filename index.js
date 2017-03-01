@@ -35,7 +35,7 @@ exports.readDirFiles = function(directoryPath){
 
     return exports.readDir(directoryPath).then( function(files) {
 			files.forEach(function(fileName) {
-			fileArray.push(exports.readFile(exports.resolvedPath(directoryPath, fileName)));
+			fileArray.push(exports.readFile(exports.resolvedPath(directoryPath, fileName));
 		})
             return Promise.all(fileArray);
         });
