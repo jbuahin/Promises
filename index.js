@@ -7,18 +7,18 @@ return path.resolve(directoryPath,fileName);
 }
 
 
-// exports.readFile  = function(filePath)
-// {
-// return new Promise(function(resolve,reject)
-// {
-    // fs.readFile(filePath, 'utf8', (err, data) => {
-      // if (err){
-        // reject(err);
-      // }
-      // resolve(data);
-    // });
-  // });
-// }
+exports.readFile  = function(filePath)
+{
+return new Promise(function(resolve,reject)
+{
+    fs.readFile(filePath, 'utf8', (err, data) => {
+      if (err){
+        reject(err);
+      }
+      resolve(data);
+    });
+  });
+}
 
 // exports.readDir = function(directoryPath){
   // return new Promise(function(resolve,reject){
@@ -42,4 +42,4 @@ return path.resolve(directoryPath,fileName);
 		// return Promise.all(fileArray);
 		// );
 	// });
-}  
+// }  
